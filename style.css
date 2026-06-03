@@ -144,19 +144,21 @@
  }
 
  .btn{
-   border-raidus: 3rem;
+   border-radius: 3rem;
    padding: 0.5rem 1.5rem;
-   border: 2px solid black;
+   border: 2px solid rgba(255,255,255,0.45);
    cursor: pointer;
    font-weight: 500;
-   text-wrap:nowrap;
+   color: #e0e0e0;
+   text-wrap: nowrap;
    transition: 0.2s ease-in-out;
+   background: transparent;
  }
 
  .btn:hover{
-   background-color: black;
-   color:white;
-
+   background: linear-gradient(to right, rgb(0, 157, 225), rgb(255,0,255));
+   border-color: transparent;
+   color: white;
  }
  .socials {
    display:flex;
@@ -171,3 +173,183 @@
  .socials i:hover{
    transform: scale(1.1);
  }
+
+ .section .title{
+   text-align:center;
+   display:flex;
+   justify-content:center;
+   gap: 3rem;
+
+ }
+
+ .experience img{
+   width:24vw;
+   border-radius: 3rem;
+ }
+ .grid{
+   display:grid;
+   grid-template-columns: repeat(2,1fr);
+   gap: 4rem;
+   margin-top: 4rem;
+ }
+ .grid-card{
+   border: 1px solid rgba(255,255,255,0.1);
+   border-radius: 1rem;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   cursor: pointer;
+   transition: 0.3s ease-in-out;
+   align-items: baseline;
+   padding: 3rem;
+   background: rgba(255,255,255,0.04);
+   backdrop-filter: blur(10px);
+ }
+.grid-card:hover{
+  transform: scale(1.02) translateY(-6px);
+  background: rgba(0, 157, 225, 0.07);
+  border-color: rgba(0, 157, 225, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 157, 225, 0.14), 0 0 20px rgba(255,0,255,0.06);
+  color: white;
+}
+ .grid-card i{
+  font-size:1.5rem;
+  marigin-bottom: 1rem;
+
+ }
+
+ .grid-card span{
+  font-size:1.5rem;
+  font-weight:500;
+   background: linear-gradient(to right,rgb(255,0,255), rgb(0, 157,225));
+    background-clip: text;
+    color: transparent;
+ }
+
+ ::-webkit-scrollbar{
+  width:10px;
+ }
+::-webkit-scrollbar-track{
+  background-color: rgb(219,219,219);
+ }
+::-webkit-scrollbar-thumb{
+  background: linear-gradient(to bottom, rgb(0, 157,225), rgb(255,0,255));
+ }
+
+/* =================== DARK THEME =================== */
+body {
+  background-color: #0a0a0a;
+  color: #e0e0e0;
+}
+
+.info-box h1 {
+  color: #ffffff;
+}
+
+.info-box h3 {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Animated gradient background — About section */
+.about {
+  background: linear-gradient(-45deg, #0a0a0a, #0c0c1a, #09100f, #06060e);
+  background-size: 400% 400%;
+  animation: gradientBG 14s ease infinite;
+}
+
+@keyframes gradientBG {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Animated gradient border ring on profile image */
+.img-wrapper {
+  display: inline-flex;
+  padding: 5px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgb(0, 157, 225), rgb(255, 0, 255), rgb(0, 157, 225));
+  background-size: 300% 300%;
+  animation: borderSpin 4s ease infinite;
+}
+
+@keyframes borderSpin {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Section title gradient underline */
+.section-title {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+  color: #ffffff;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 70px;
+  height: 4px;
+  margin: 0.6rem auto 0;
+  border-radius: 2px;
+  background: linear-gradient(to right, rgb(0, 157, 225), rgb(255, 0, 255));
+}
+
+/* Scroll fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in:nth-child(2) { transition-delay: 0.2s; }
+
+/* Social icon color on hover */
+.socials .fa-github:hover   { color: #a371f7; }
+.socials .fa-linkedin:hover { color: #0a66c2; }
+.socials .fa-google:hover   { color: #ea4335; }
+
+/* Typing cursor */
+.cursor {
+  display: inline;
+  font-size: 2rem;
+  font-weight: 400;
+  background: linear-gradient(to right, rgb(255, 0, 255), rgb(0, 157, 225));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: blink 0.75s step-start infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* Grid card text visibility on dark */
+.grid-card h3 {
+  color: rgba(255, 255, 255, 0.75);
+  margin-top: 0.75rem;
+}
+
+.grid-card p {
+  color: rgba(255, 255, 255, 0.55);
+  margin-top: 0.5rem;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.grid-card i {
+  background: linear-gradient(to right, rgb(0, 157, 225), rgb(255, 0, 255));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
