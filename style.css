@@ -222,9 +222,10 @@
  .grid-card span{
   font-size:1.5rem;
   font-weight:500;
-   background: linear-gradient(to right,rgb(255,0,255), rgb(0, 157,225));
-    background-clip: text;
-    color: transparent;
+  background: linear-gradient(to right,rgb(255,0,255), rgb(0, 157,225));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
  }
 
  ::-webkit-scrollbar{
